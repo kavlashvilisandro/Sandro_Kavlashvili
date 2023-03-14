@@ -1,0 +1,6 @@
+﻿{
+  "Logger": {
+    "InformationPath": "D:\\PizzaApplication\\PizzaApplication.WebAPI\\Logs\\InformationLogs.txt",
+    "ErrorPath": "D:\\PizzaApplication\\PizzaApplication.WebAPI\\Logs\\ErrorLogs.txt"
+  }
+}
