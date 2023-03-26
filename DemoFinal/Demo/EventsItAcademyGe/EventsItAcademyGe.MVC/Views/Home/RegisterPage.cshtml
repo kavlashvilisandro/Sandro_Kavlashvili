@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+        
+
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post)) // Create a form to submit login details to the server
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="UserName" class="form-control" minLength ="6" maxlength = "19"/>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="Password" class="form-control" minLength ="9"/>
+            </div>
+            <br />
+
+            <button type="submit" class="btn btn-primary">Register</button>
+        }
+
+</div>

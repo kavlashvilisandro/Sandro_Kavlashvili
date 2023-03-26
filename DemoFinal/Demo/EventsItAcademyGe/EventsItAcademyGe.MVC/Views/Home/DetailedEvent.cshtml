@@ -1,0 +1,32 @@
+﻿@model EventsItAcademyGe.MVC.Models.DetailedEventViewModel;
+
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Event Name: @Model.Event.eventName</h2>
+        <p><strong>Description:</strong> @Model.Event.eventDescription</p>
+        <p><strong>Start Date:</strong> @Model.Event.startDate.ToShortDateString()</p>
+        <p><strong>End Date:</strong> @Model.Event.endDate.ToShortDateString()</p>
+        <p><strong>Ticket Amount:</strong> @Model.Event.ticketAmount</p>
+        @if(Model.JWT != null)
+        {
+            <a href = "/User/BuyTicket/@Model.Event.EventID">
+                <button type="button" class="btn btn-primary">Buy Ticket</button>
+            </a>
+        }
+        @if(Model.JWT != null)
+        {
+            <a href = "/User/ReserveTicket/@Model.Event.EventID">
+                <button type="button" class="btn btn-primary">Reserve Ticket</button>
+            </a>
+        }
+    </div>
+</div>
+
+
+
+
+

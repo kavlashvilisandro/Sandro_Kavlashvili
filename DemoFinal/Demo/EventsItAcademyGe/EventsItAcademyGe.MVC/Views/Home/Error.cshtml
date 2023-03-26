@@ -1,0 +1,28 @@
+﻿@model EventsItAcademyGe.MVC.Models.ErrorViewModel;
+@{
+    string Message = "";
+    int StatusCode = 0;
+    using (Model)
+    {
+        Message = Model.GetErrorMessage();
+        StatusCode = Model.StatusCode;
+    }
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h2>Error @StatusCode</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">@Message</p>
+                    <p>@ViewBag.ErrorMessage</p>
+                    <a href="javascript:history.go(-1)" class="btn btn-secondary">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

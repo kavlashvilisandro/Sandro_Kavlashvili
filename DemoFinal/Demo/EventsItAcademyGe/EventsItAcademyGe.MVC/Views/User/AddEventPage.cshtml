@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "AddEventPage";
+}
+
+<form method="post" onsubmit="return validateForm()" action = "/User/AddEvent">
+    <div class="mb-3">
+        <label for="eventName" class="form-label">Event Name:</label>
+        <input type="text" id="eventName" name="eventName" class="form-control" required maxlength="30"/>
+    </div>
+
+    <div class="mb-3">
+        <label for="eventDescription" class="form-label">Event Description:</label>
+        <textarea id="eventDescription" name="eventDescription" class="form-control" required maxlength="300"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="ticketAmount" class="form-label">Ticket Amount:</label>
+        <input type="number" id="ticketAmount" name="ticketAmount" class="form-control" required min="1"/>
+    </div>
+
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control" required />
+    </div>
+
+    <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<script>
+    function validateForm() {
+        var startDate = new Date(document.getElementById("startDate").value);
+        var endDate = new Date(document.getElementById("endDate").value);
+        var today = new Date();
+
+        if (startDate > endDate || startDate <= today || endDate <= today) {
+            alert("Start Date must be less than or equal to End Date.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+
+
