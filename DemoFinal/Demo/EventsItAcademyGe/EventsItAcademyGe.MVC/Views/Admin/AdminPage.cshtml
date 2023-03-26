@@ -1,0 +1,57 @@
+﻿@model EventsItAcademyGe.MVC.Models.AdminPageViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@if (Model.IsAdmin)
+{
+    <div align="center"><h4>Change update time limit</h4></div>
+    <form action="ChangeEventUpdateTimeLimit">
+        <div align="center">
+            <div class="form-group">
+                <label for="password">Time limit in days: </label>
+                <br/>
+                <input type="number" id="number" class="form-control" name="DaysAmount" required min ="1" style="width: 30%;"/>
+                <br/>
+                <button class="btn btn-primary" type="submit">Change time limit</button>
+            </div>
+        </div>
+    </form>
+}
+
+@if (Model.IsAdmin)
+{
+    <div align="center"><h4>Set user as moderator</h4></div>
+    <form action="SetUserAsAdmin">
+        <div align="center">
+            <div class="form-group">
+                <label for="password">User id</label>
+                <br/>
+                <input type="number" id="number" class="form-control" name="UserID" required min ="1" style="width: 30%;"/>
+                <br/>
+                <button class="btn btn-primary" type="submit">Set user as moderator</button>
+            </div>
+        </div>
+    </form>
+}
+
+<div align="center"><h1>Pending Events</h1></div>
+<div class="row">
+    @foreach (var eventModel in Model.PendingEvents)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Event name: @eventModel.eventName</h6>
+                    <p class="card-text">Ticket amount: @eventModel.ticketAmount</p>
+                    <p class="card-text">Start date: @eventModel.startDate.ToShortDateString()</p>
+                    <p class="card-text">End date: @eventModel.endDate.ToShortDateString()</p>
+                    <p class="card-text">Description: @eventModel.eventDescription</p>
+                    <a href="/Admin/ActivateEvent/@eventModel.EventID"><button class="btn btn-primary">Activate event</button></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

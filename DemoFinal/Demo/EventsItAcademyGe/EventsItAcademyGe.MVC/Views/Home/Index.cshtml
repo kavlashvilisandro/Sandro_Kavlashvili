@@ -1,0 +1,28 @@
+﻿@model EventsItAcademyGe.MVC.Models.HomePageViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@if (@Model.IsAuthorized)
+{
+    <div class = "row">
+        <div class = "col-md-12">
+            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="AddEventPage">Add Event</a>
+        </div>
+    </div>
+}
+<div class="row">
+    @foreach (var eventModel in Model.activeEvents)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Event name: @eventModel.eventName</h6>
+                    <p class="card-text">Ticket amount: @eventModel.ticketAmount</p>
+                    <p class="card-text">Start date: @eventModel.startDate.ToShortDateString()</p>
+                    <p class="card-text"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DetailedEvent" asp-route-EventID="@eventModel.EventID">More details</a></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

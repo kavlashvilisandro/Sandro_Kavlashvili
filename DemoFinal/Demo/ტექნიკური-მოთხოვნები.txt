@@ -1,0 +1,41 @@
+ტექნილოგიები:
+net6.0 API
+MCV
+Workers
+Sql Server 
+EF Core(Code First). 
+
+Pattern-ები და პრინციპები:
+OOP პრინციპების დაცვა (Single Responsibility, interface segregation, Dependecy Inversion)
+Repositorys - pattern (ბექამ როგორც ბოლოს მოიწერა slack-ში)
+
+არქიტექტურა:
+Layerd architecture - Clean-რასაც ვუწუდეთ
+
+API-მოთხოვნები:
+Restfull-ობა (Routing)
+Global Exception Handling
+Fluent Validation - Fluent Api
+ApiVersioning
+Swagger(Produce response)-ბი response-მოდელების ცხადად დაბრუნება IActionResult-ები არ გვინდა, რთული model-ების response example-ბი.
+JWt Token
+
+MVC მოთხოვნები:
+Data annotation ვალიდაცია
+mvc-role base ავტორიზაცია
+client-side validation
+Server-side validation
+Owasp - Cross sity Scripting - Cross Site Request forgery - გან დაცვა.
+
+დანარჩენი მოთხოვნები: 
+ასინქრონული პროგრამირება(Async await) 
+Unit testing - Application Layer (XUnit, Moq, Fluent Assertion, Code Covarage)
+Source - github-ზე
+EditorConfig სტილისტიკის დაცვა.
+IQurable-სათვის ყურადღების მიქცევა,
+Health - Check-ები. HealthCheck monitor project (Database)
+Mapster Requst/response Model
+Localization
+ILogger(Serilog: Sinks File, Console). CreateBootstrapLogger() https://nblumhardt.com/2020/10/bootstrap-logger/ 
+
+
